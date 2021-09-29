@@ -1,15 +1,20 @@
 {
   "name": "jpcord",
   "version": "1.0.0",
-  "description": "",
+  "description": "nextcord of javascript version",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/babel-node ./test"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["discord"],
+  "author": "Snow_Kitten1314",
   "license": "ISC",
   "dependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.5",
+    "@babel/node": "^7.15.4",
+    "@babel/preset-env": "^7.15.6",
+    "@jetblack/operator-overloading": "^0.2.0",
     "fetch": "^1.1.0",
     "ws": "^8.2.2"
   }

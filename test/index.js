@@ -1,13 +1,17 @@
+'operator-overloading enabled'
+
 class EqualityComparable {
 
-	id = 0
+	constructor() {
+		this.id = 0
+	}
 
-	eq(obj) {
+	[Symbol.for("==")] = (obj) => {
 		if(obj instanceof EqualityComparable)
 			return obj.id === this.id
 	}
 
-	ne(obj) {
+	[Symbol.for("!=")] = (obj) => {
 		if(obj instanceof EqualityComparable)
 			return obj.id !== this.id
 		return true
@@ -20,6 +24,9 @@ class Hashable extends EqualityComparable {
 		return this.id >> 22
 	}
 }
+let a = new EqualityComparable()
+a.id = 11112222
+let b = new EqualityComparable()
+b.id = 11112222
 
-exports.EqualityComparable = EqualityComparable
-exports.Hashable = Hashable
+console.log(a == b)
